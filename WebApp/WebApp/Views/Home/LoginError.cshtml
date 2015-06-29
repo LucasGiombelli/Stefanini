@@ -1,0 +1,36 @@
+﻿<style>
+    input {
+        border: 1px solid #FF0000;
+    }
+</style>
+
+@using (Html.BeginForm("Login", "Home"))
+{
+    @Html.AntiForgeryToken()
+
+    <p>The e-mail and/or password entered is invalid. Please try again.</p>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label>Email:</label>
+            </td>
+            <td>
+                @Html.TextBox("email")
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label>Password:</label>
+            </td>
+            <td>
+                @Html.Password("password")
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit">Login</button>
+            </td>
+        </tr>
+    </table>
+}
